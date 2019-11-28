@@ -61,3 +61,5 @@ The PC SDK provided by ABB only natively supports C# and VB. The goal (as well a
     * ABBConnectorFactory.h
 
 可以直接下载项目内的**ABBConnectorSDK.zip**，其中包含了所有上述文件
+
+**注意，ABB提供的DLL还依赖于ABB Robot Communication Runtime运行环境，该运行环境的安装包包含在PC SDK的安装包内。所以，即便不进行开发，仅使用这一组API也需要安装ABB Robot Communication Runtime，否则程序执行时会崩溃**

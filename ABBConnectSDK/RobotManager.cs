@@ -38,6 +38,7 @@ namespace ABBConnectSDK
             if (controllers.Count() < 1)
             {
                 ret = (int)ErrorCode.err_no_controller;
+                return ret;
             }
             controller = new Controller(controllers[0]);
             controller.Logon(UserInfo.DefaultUser);
@@ -74,6 +75,11 @@ namespace ABBConnectSDK
             RapidData rapid_data;
 
             value = -1.0;
+            if (controller == null)
+            {
+                ret = (int)ErrorCode.err_no_controller;
+                return ret;
+            }
             controller.Logon(UserInfo.DefaultUser);
             try
             {
@@ -111,6 +117,11 @@ namespace ABBConnectSDK
             RapidData rapid_data;
 
             value = new double[6];
+            if (controller == null)
+            {
+                ret = (int)ErrorCode.err_no_controller;
+                return ret;
+            }
             controller.Logon(UserInfo.DefaultUser);
             try
             {
@@ -150,6 +161,11 @@ namespace ABBConnectSDK
             int ret = 0;
             RapidData rapid_data;
 
+            if (controller == null)
+            {
+                ret = (int)ErrorCode.err_no_controller;
+                return ret;
+            }
             controller.Logon(UserInfo.DefaultUser);
             try
             {
@@ -199,6 +215,11 @@ namespace ABBConnectSDK
             int ret = 0;
             RapidData rapid_data;
 
+            if (controller == null)
+            {
+                ret = (int)ErrorCode.err_no_controller;
+                return ret;
+            }
             if (value.Length != 6)
             {
                 ret = (int)ErrorCode.err_illegal_array;
@@ -249,6 +270,11 @@ namespace ABBConnectSDK
             int ret = 0;
 
             arr = new double[6];
+            if (controller == null)
+            {
+                ret = (int)ErrorCode.err_no_controller;
+                return ret;
+            }
             controller.Logon(UserInfo.DefaultUser);
             ABB.Robotics.Controllers.RapidDomain.Task motion_task = controller.Rapid.GetTask("T_ROB1");
             if (motion_task == null)

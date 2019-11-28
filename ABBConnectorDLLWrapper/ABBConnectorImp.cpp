@@ -14,7 +14,6 @@ using namespace ABBConnectSDK;
 ABBConnectorImp::ABBConnectorImp()
 {
     robot_manager_ = gcnew RobotManager();
-    this->connect();
 }
 
 /******************************************************************
